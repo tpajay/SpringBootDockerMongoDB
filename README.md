@@ -3,7 +3,8 @@ start/ssh vagrant server
 
 start spring studio suite
 
-start mongodb using docker image:\n
+start mongodb using docker image:
+
 	sudo docker run -P -d --name mongodb mongo
 	sudo docker exec -it mongodb sh
 	# mongo (test then exit, exit)
