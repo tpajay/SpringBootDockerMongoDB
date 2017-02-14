@@ -3,6 +3,8 @@ package com.tpajay.springbootdocker;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+//@Document ties this object to be a Mongo Document
+//and provides the collection name
 @Document(collection="patients")
 public class Patient {
 
