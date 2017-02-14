@@ -20,7 +20,7 @@
 	sudo docker exec -it mongodb sh
 
 
-<b>check mongo:</b>
+<b>check mongo (you will need the port number):</b>
 
 	docker ps (get port number)
 	curl 192.168.0.249:32768 (check port above)
