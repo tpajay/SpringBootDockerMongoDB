@@ -1,7 +1,9 @@
 
-start/ssh vagrant server
+<b>start/ssh vagrant server</b>
 
-start spring studio suite
+
+<b>start spring studio suite</b>
+
 
 <b>start mongodb using docker image:</b>
 
@@ -10,7 +12,7 @@ start spring studio suite
 	# mongo (test then exit, exit)
 
 
-(optional) if you want to remove containers and start fresh:
+<b>(optional) if you want to remove containers and start fresh:</b>
 
 	sudo docker stop $(docker ps -a -q)
 	sudo docker rm $(docker ps -a -q)
@@ -18,29 +20,29 @@ start spring studio suite
 	sudo docker exec -it mongodb sh
 
 
-check mongo:
+<b>check mongo:</b>
 
 	docker ps (get port number)
 	curl 192.168.0.249:32768 (check port above)
 
 
-create project:
+<b>create project:</b>
 
 	open Spring Tool Suite
 	import gradle file, choose Build Model to create project
 
 
-build project/jar:
+<b>build project/jar:</b>
 
 	go to project directory, run "gradle build"
 
 
-start Spring/REST application:
+<b>start Spring/REST application:</b>
 
 	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/Patient.jar
 
 
-test with Postman:
+<b>test with Postman:</b>
 
 	POST: http://localhost:8080/patient
 	Content-Type = application/json
