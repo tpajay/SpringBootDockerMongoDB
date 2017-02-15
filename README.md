@@ -5,14 +5,19 @@
 <b>start spring studio suite</b>
 
 
-<b>start mongodb using docker image:</b>
+<b>install/start mongodb using docker image:</b>
 
 	sudo docker run -P -d --name mongodb mongo
-	sudo docker exec -it mongodb sh
-	# mongo (test then exit, exit)
 
 
-<b>(optional) if you want to remove containers and start fresh:</b>
+<b>RE-start mongodb:</b>
+
+	docker ps -a (list all, get container id)
+	(stop)  docker stop container_id
+	(start) docker start container_id
+	
+	
+<b>Remove all containers, start fresh:</b>
 
 	sudo docker stop $(docker ps -a -q)
 	sudo docker rm $(docker ps -a -q)
@@ -22,6 +27,8 @@
 
 <b>check mongo (you will need the port number):</b>
 
+	sudo docker exec -it mongodb sh
+	# mongo (test then exit, exit)
 	docker ps (get port number)
 	curl 192.168.0.249:32768 (check port above)
 
