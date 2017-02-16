@@ -68,3 +68,37 @@
 	GET:
 		http://localhost:8080/patient/0001
 		
+
+<b>Boot application to Container as a microservice:</b>
+
+	sudo vi Dockerfile (192.168.0.249:32768)
+		FROM java:8
+		VOLUME /tmp
+		ADD build/libs/Patient.jar patient.jar
+		EXPOSE 8080
+		RUN bash -c 'touch /patient.jar'
+		ENTRYPOINT ["java","-Dspring.data.mongodb.uri=mongodb://mongodb/micros", "-Djava.security.egd=file:/dev/./urandom","-jar","/patient.jar"]
+	
+	Build patient microservice Docker image:
+		sudo docker build -t microservices/patient .
+	
+	Run container image, linking to "mongodb" container:
+		docker run -P -d --name patient --link mongodb microservices/patient
+		
+	Run commands on the container:
+		docker exec patient bash -c 'env' (check env vars)
+		docker exec patient bash -c 'ls' (list directories)
+	
+	Web application now running on Vagrant VM from Docker container:
+	POST:
+		192.168.0.249:32776/patient
+		* same content-type, payload setup above
+		* run docker ps to get patient port number
+	GET:
+		192.168.0.249:32776/patient/0002
+
+	
+	
+	
+	
+	
