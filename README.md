@@ -69,7 +69,7 @@
 		http://localhost:8080/patient/0001
 		
 
-<b>Boot application to Container as a microservice:</b>
+<b>Spring Boot application to Docker Container as a microservice:</b>
 
 	sudo vi Dockerfile (192.168.0.249:32768)
 		FROM java:8
