@@ -11,9 +11,6 @@ Patient, Patient Appointments, Patient Medications
 <hr>
 <h3>STEPS</h3>
 <hr>
-
-<br/>
-
 <b>start/ssh vagrant server</b>
 
 
