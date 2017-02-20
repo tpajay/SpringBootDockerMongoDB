@@ -90,13 +90,14 @@ Patient, Patient Appointments, Patient Medications
 		192.168.0.249:32776/patient/0001
 		192.168.0.249:32776/patient  (GET all)
 
-<br/><br/>
+<br/>
 
 <b>If any issues throughout these steps you can always try a fresh start by removing ALL the Docker containers from the VM, and go over the steps again:</b>
 	
 	sudo docker stop $(docker ps -a -q)
 	sudo docker rm $(docker ps -a -q)
 	
+<br/>
 
 <b>Testing Patient Appointment and Medication Microservices [all seperate Docker containers].  First these microservices need to be build and deployed as Docker containers just like above.</b>
 
