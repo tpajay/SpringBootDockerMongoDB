@@ -116,6 +116,7 @@ Patient, Patient Appointments, Patient Medications
 			}
 	GET:
 		192.168.0.249:32776/appointment/1111
+		192.168.0.249:32776/appointment  (GET all)
 	
 	
 	Patient Medications:
@@ -136,7 +137,8 @@ Patient, Patient Appointments, Patient Medications
 			  "endDttm": "01012027"
 			}
 	GET:
-		192.168.0.249:32776/medication/1111	
+		192.168.0.249:32776/medication/1111
+		192.168.0.249:32776/medication  (GET all)
 
 		
 <br/><br/>
