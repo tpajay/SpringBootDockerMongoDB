@@ -29,12 +29,6 @@ Patient, Patient Appointments, Patient Medications
 	(start) docker start container_id
 	
 	
-<b>If any issues throughout these steps you can always try a fresh start by removing ALL the Docker containers from the VM, and go over the steps again:</b>
-	
-	sudo docker stop $(docker ps -a -q)
-	sudo docker rm $(docker ps -a -q)
-
-
 <b>check mongo (you will need the port number):</b>
 
 	sudo docker exec -it mongodb sh
@@ -97,6 +91,11 @@ Patient, Patient Appointments, Patient Medications
 		192.168.0.249:32776/patient  (GET all)
 
 
+<b>If any issues throughout these steps you can always try a fresh start by removing ALL the Docker containers from the VM, and go over the steps again:</b>
+	
+	sudo docker stop $(docker ps -a -q)
+	sudo docker rm $(docker ps -a -q)
+	
 <br/><br/>
 
 <b>Testing Patient Appointment and Medication Microservices [all seperate Docker containers].  First these microservices need to be build and deployed as Docker containers just like above.</b>
