@@ -1,4 +1,4 @@
-package com.tpajay.springbootdocker;
+package com.tpajay.springbootdocker.patient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +14,14 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 
+/* 
+ * Patient Microservice [Spring Boot]
+ * 
+ * @author  Jason Muse
+ * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+ * GitHub: https://github.com/tpajay/SpringBootDockerMongoDB
+ * 
+ */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan

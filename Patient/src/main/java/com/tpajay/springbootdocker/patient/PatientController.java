@@ -1,4 +1,6 @@
-package com.tpajay.springbootdocker;
+package com.tpajay.springbootdocker.patient;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,6 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/* 
+ * Patient Microservice [Controller]
+ * Microservice to create and retrieve patients 
+ * using REST post and get methods, stored in MongoDB collection
+ * 
+ * @author  Jason Muse
+ * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+ * GitHub: https://github.com/tpajay/SpringBootDockerMongoDB
+ * 
+ */
 @RestController
 @RequestMapping("/patient")
 public class PatientController {

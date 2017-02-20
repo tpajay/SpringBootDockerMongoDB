@@ -1,4 +1,9 @@
-<h3>Quickly build/deploy REST microservice using Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.</h3>
+<h3>
+Quickly build/deploy REST microservice using Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.
+<br/>
+<br/>
+Currently working on three microservices: Patient, Patient Appointments, Patient Medications all built the same way below.
+</h3>
 
 <br/><br/>
 <b>start/ssh vagrant server</b>
@@ -70,7 +75,7 @@
 	Web application now running on Vagrant VM from Docker container:
 	POST:
 		192.168.0.249:32776/patient (vagrant server IP : microservice exposed port)
-		* run "docker ps" to get patient port number
+		* run "docker ps" to get patient service port number
 		Content-Type = application/json
 		Payload:
 			{
@@ -89,18 +94,57 @@
 
 
 <br/><br/>
-<b>If you want to test your application in Windows before creating a Docker image:</b>
 
+<b>Testing Patient Appointment and Medication Microservices [all seperate Docker containers].  First these microservices need to be build and deployed as Docker containers just like above.</b>
+
+	Patient Appointments:
+	192.168.0.249:32776/appointment (vagrant server IP : microservice exposed port), run "docker ps" to get appointment service port number
+	POST:
+		Content-Type = application/json
+		Payload:
+			{
+			  "apptId": "1111",
+			  "patientId": "0001",
+			  "physicianId": "2222",
+			  "description": "Quaterly Blood Work CBC LIPID PANEL",
+			  "apptDttm": "030520171400"
+			}
+	GET:
+		192.168.0.249:32776/appointment/1111
+	
+	
+	Patient Medications:
+	192.168.0.249:32776/medication (vagrant server IP : microservice exposed port), run "docker ps" to get medication service port number
+	POST:		
+		Content-Type = application/json
+		Payload:
+			{
+			  "prescId": "1111",
+			  "patientId": "0001",
+			  "physicianId": "2222",
+			  "name": "Vitamin D3",
+			  "description": "Vitamin D3 supplements",
+			  "dosage": "5000iu",
+			  "frequency": "daily",
+			  "duration": "365",
+			  "startDttm": "01012017",
+			  "endDttm": "01012027"
+			}
+	GET:
+		192.168.0.249:32776/medication/1111	
+
+		
+<br/><br/>
+
+<b>If you want to start/test your application using a CMD window before creating a Docker image use commands below.  One at a time.  Use localhost:8080/servicename as URI:</b>
+	
+	Patient service:
 	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/Patient.jar
 	
-	POST: http://localhost:8080/patient
-	Content-Type = application/json
-	* same payload as above
+	Patient Appointments service:
+	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/PatientAppts.jar
+	
+	Patient Medications service:
+	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/PatientMeds.jar
 
-	GET:
-		http://localhost:8080/patient/0001
-	
-	
-	
-	
 	

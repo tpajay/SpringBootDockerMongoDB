@@ -1,10 +1,17 @@
-package com.tpajay.springbootdocker;
+package com.tpajay.springbootdocker.patient;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Document ties this object to be a Mongo Document
-//and provides the collection name
+/* 
+ * Patient Microservice [Model/Entity]
+ * 
+ * @author  Jason Muse
+ * LinkedIn: https://www.linkedin.com/in/jason-muse-570a03110
+ * GitHub: https://github.com/tpajay/SpringBootDockerMongoDB
+ * 
+ * @Document ties this object to be a Mongo Document and provides the collection name
+ */
 @Document(collection="patients")
 public class Patient {
 
@@ -18,9 +25,6 @@ public class Patient {
 	private String zipcode;
 	private String phone;
 	private String email;
-	
-	private int totalPointsEarned;
-	private int availablePoints;
 	
 	public String getPatientId() {
 		return patientId;
