@@ -2,10 +2,16 @@
 Quickly build/deploy REST microservice using Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.
 <br/>
 <br/>
-Currently working on three microservices: Patient, Patient Appointments, Patient Medications all built the same way below.
+Currently three Microservices that will each be deployed in their own Docker container running seperately for scalability and HA:
+Patient, Patient Appointments, Patient Medications
 </h3>
 
 <br/><br/>
+
+<h3>Rough Steps</h3>
+
+<br/><br/>
+
 <b>start/ssh vagrant server</b>
 
 
