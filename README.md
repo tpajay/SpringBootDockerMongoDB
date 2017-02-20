@@ -1,5 +1,5 @@
 <h3>
-REST microservices using VirtualBox/Vagrant, Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.
+REST microservices using VirtualBox/Vagrant, Docker containers, Spring Boot, MongoDB, Spring Data MongoRepository API.
 <br/>
 <br/>
 Currently three Microservices that will each be deployed in their own Docker container running seperately for scalability and HA:
