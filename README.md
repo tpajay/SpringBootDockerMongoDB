@@ -8,7 +8,8 @@ Patient, Patient Appointments, Patient Medications
 
 <br/>
 
-<h3>Rough Steps</h3>
+<hr>
+<h3>STEPS</h3>
 <hr>
 
 <br/>
