@@ -29,8 +29,9 @@ Patient, Patient Appointments, Patient Medications
 	(start) docker start container_id
 	
 	
-<b>Remove all containers, start fresh:</b>
-
+<b>(optional)Remove all containers, start fresh:</b>
+	
+	* probably won't need to do this, but I wanted to document the steps
 	sudo docker stop $(docker ps -a -q)
 	sudo docker rm $(docker ps -a -q)
 	sudo docker run -P -d --name mongodb mongo
