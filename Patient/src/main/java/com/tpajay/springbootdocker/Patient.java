@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Patient {
 
 	@Id
-	private String patientId; 	
+	private String patientId;
 	private String firstName;
 	private String lastName;
 	private String address;
@@ -18,6 +18,9 @@ public class Patient {
 	private String zipcode;
 	private String phone;
 	private String email;
+	
+	private int totalPointsEarned;
+	private int availablePoints;
 	
 	public String getPatientId() {
 		return patientId;

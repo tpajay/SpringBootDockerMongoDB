@@ -14,6 +14,7 @@ public class PatientController {
 	@Autowired
 	PatientRepository patientRepository;
 
+	//add new patient
 	@RequestMapping(method = RequestMethod.POST)
 	public Patient create(@RequestBody Patient patient){
 		
@@ -21,10 +22,16 @@ public class PatientController {
 		return result;
 	}
 	
+	//get patient by patient_id
 	@RequestMapping(method = RequestMethod.GET, value="/{patientId}")
 	public Patient get(@PathVariable String patientId){
 		return patientRepository.findOne(patientId);
 	}
 	
+	//get all patients
+	@RequestMapping(method = RequestMethod.GET, value="")
+	public List<Patient> getAll() {
+		return patientRepository.findAll();
+	}		
 	
 }
