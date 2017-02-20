@@ -1,5 +1,5 @@
 <h3>
-Quickly build/deploy REST microservice using Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.
+REST microservices using VirtualBox/Vagrant, Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.
 <br/>
 <br/>
 Currently three Microservices that will each be deployed in their own Docker container running seperately for scalability and HA:
@@ -22,7 +22,7 @@ Patient, Patient Appointments, Patient Medications
 	sudo docker run -P -d --name mongodb mongo
 
 
-<b>RE-start mongodb:</b>
+<b>(if needed)RE-start mongodb container:</b>
 
 	docker ps -a (list all, get container id)
 	(stop)  docker stop container_id
