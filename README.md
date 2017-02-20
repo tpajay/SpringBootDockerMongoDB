@@ -1,7 +1,6 @@
 <h3>Quickly build/deploy REST microservice using Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.</h3>
 
 
-
 <b>start/ssh vagrant server</b>
 
 
@@ -89,7 +88,7 @@
 		192.168.0.249:32776/patient/0001
 
 
-		
+
 <b>If you want to test your application in Windows before creating a Docker image:</b>
 
 	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/Patient.jar
