@@ -45,34 +45,10 @@
 <b>build project/jar:</b>
 
 	go to project directory, run "gradle build"
+	ftp or copy JAR to your virtual machine
 
 
-<b>start Spring/REST application:</b>
-
-	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/Patient.jar
-
-
-<b>test with Postman:</b>
-
-	POST: http://localhost:8080/patient
-	Content-Type = application/json
-	Payload example:
-		{
-			"patientId": "0001",
-			"firstName": "Jason",
-			"lastName": "Muse",
-			"address": "1212 Beach Street",
-			"city": "Tampa",
-			"state": "FL",
-			"zipcode": "33602",
-			"phone": "813-555-4444",
-			"email": "email@email.com"
-		}
-	GET:
-		http://localhost:8080/patient/0001
-		
-
-<b>Spring Boot application to Docker Container as a microservice:</b>
+<b>Create Docker image container for Spring Boot application and link to Mongo Docker container:</b>
 
 	sudo vi Dockerfile (192.168.0.249:32768)
 		FROM java:8
@@ -94,12 +70,35 @@
 	
 	Web application now running on Vagrant VM from Docker container:
 	POST:
-		192.168.0.249:32776/patient
-		* same content-type, payload setup above
-		* run docker ps to get patient port number
+		192.168.0.249:32776/patient (vagrant server IP : microservice exposed port)
+		* run "docker ps" to get patient port number
+		Content-Type = application/json
+		Payload:
+			{
+				"patientId": "0001",
+				"firstName": "Jason",
+				"lastName": "Muse",
+				"address": "1212 Beach Street",
+				"city": "Tampa",
+				"state": "FL",
+				"zipcode": "33602",
+				"phone": "813-555-4444",
+				"email": "email@email.com"
+			}		
 	GET:
 		192.168.0.249:32776/patient/0002
 
+
+<b>If you want to test your application in Windows before creating a Docker image:</b>
+
+	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/Patient.jar
+	
+	POST: http://localhost:8080/patient
+	Content-Type = application/json
+	* same payload as above
+
+	GET:
+		http://localhost:8080/patient/0001
 	
 	
 	
