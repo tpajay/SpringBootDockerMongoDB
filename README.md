@@ -1,4 +1,4 @@
-<h3>Quickly build/deploy REST microservice using Spring Boot, Docker, MongoDB</h3>
+<h3>Quickly build/deploy REST microservice using Docker containers, Spring Boot, MongoDB, using Spring Data MongoRepository API.</h3>
 
 
 
