@@ -6,11 +6,12 @@ Currently three Microservices that will each be deployed in their own Docker con
 Patient, Patient Appointments, Patient Medications
 </h3>
 
-<br/><br/>
+<br/>
 
 <h3>Rough Steps</h3>
+<hr>
 
-<br/><br/>
+<br/>
 
 <b>start/ssh vagrant server</b>
 
