@@ -29,13 +29,10 @@ Patient, Patient Appointments, Patient Medications
 	(start) docker start container_id
 	
 	
-<b>(optional)Remove all containers, start fresh:</b>
+<b>If any issues throughout these steps you can always try a fresh start by removing ALL the Docker containers from the VM, and go over the steps again:</b>
 	
-	* probably won't need to do this, but I wanted to document the steps
 	sudo docker stop $(docker ps -a -q)
 	sudo docker rm $(docker ps -a -q)
-	sudo docker run -P -d --name mongodb mongo
-	sudo docker exec -it mongodb sh
 
 
 <b>check mongo (you will need the port number):</b>
