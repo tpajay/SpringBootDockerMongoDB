@@ -96,6 +96,7 @@ Patient, Patient Appointments, Patient Medications
 			}		
 	GET:
 		192.168.0.249:32776/patient/0001
+		192.168.0.249:32776/patient  (GET all)
 
 
 <br/><br/>
