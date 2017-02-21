@@ -174,6 +174,7 @@ Patient, Patient Appointments, Patient Medications
 	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/PatientMeds.jar
 
 <br/>
+<hr>
 
 <h1>Docker Compose to start all of the microservices:</h1>
 
