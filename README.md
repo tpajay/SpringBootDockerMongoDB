@@ -92,6 +92,26 @@ Patient, Patient Appointments, Patient Medications
 
 <br/>
 
+<br/>
+
+<b>Build the Patient Appointments and Medication microservices as Docker images/containers the same as with Patient MS.</b>
+
+	sudo docker build -t microservices/patientappt .
+	sudo docker build -t microservices/patientmed .
+	docker run -P -d --name patientappt --link mongodb microservices/patientappt
+	docker run -P -d --name patientmed --link mongodb microservices/patientmed
+	
+<br/>
+
+<b>If you update the microservice code you need to rebuild the Docker image and remove the old image:</b>
+	
+	sudo docker stop patient
+	docker rm patient
+	docker run -P -d --name patient --link mongodb microservices/patient
+	* same with all other microservices
+	
+<br/>
+
 <b>If any issues throughout these steps you can always try a fresh start by removing ALL the Docker containers from the VM, and go over the steps again:</b>
 	
 	sudo docker stop $(docker ps -a -q)
@@ -153,4 +173,60 @@ Patient, Patient Appointments, Patient Medications
 	Patient Medications service:
 	java -Dspring.data.mongodb.uri=mongodb://192.168.0.249:32768/micros -jar build/libs/PatientMeds.jar
 
+<br/>
+
+<h3>Docker Compose to start all of the microservices:</h3>
+<br/>
+<br/>
+	Install Docker Compose:
+		sudo curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+		sudo chmod +x /usr/local/bin/docker-compose
+		sudo usermod -G docker vagrant		
 	
+	I created a directory that has three subdirectories: patient, appointment, medication.  Each with its own Dockerfile and JAR.
+	docker-compose.yml:
+		patient:
+		 build: patient
+		 ports:
+		  - "8080"
+		 links:
+		  - mongodb
+		patientappt:
+		 build: appointment
+		 ports:
+		  - "8080"
+		 links:
+		  - mongodb
+		patientmed:
+		 build: medication
+		 ports:
+		  - "8080"
+		 links:
+		  - mongodb
+		mongodb:
+		 image: mongo
+		 
+	Run the docker-compose YAML:
+		sudo docker-compose up -d
+		
+	Check to see running:
+		docker-compose ps
+	
+	If issues, you can always check container logs:
+		docker logs containerid
+		
+	Test:
+		docker-compose ps to get port numbers for each first:
+		patient:     192.168.0.249:32777/patient
+		patientappt: 192.168.0.249:32778/appointment
+		patientmed:  192.168.0.249:32776/medication
+		curl 
+		
+	Scale a container:
+		docker-compose scale patient=5
+		docker-compose scale patient=1 (scale back down)
+		docker-compose scale patientappt=5
+		docker-compose scale patientmed=5
+ 
+ 
+ 
