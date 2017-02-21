@@ -1,0 +1,20 @@
+patient:
+ build: patient
+ ports:
+   - "8080"
+ links:
+   - mongodb
+patientappt:
+ build: appointment
+ ports:
+   - "8080"
+ links:
+   - mongodb
+patientmed:
+ build: medication
+ ports:
+   - "8080"
+ links:
+   - mongodb
+mongodb:
+ image: mongo
