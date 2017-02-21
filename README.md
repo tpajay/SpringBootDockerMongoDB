@@ -184,7 +184,7 @@ Patient, Patient Appointments, Patient Medications
 		sudo chmod +x /usr/local/bin/docker-compose
 		sudo usermod -G docker vagrant		
 	
-	I created a directory that has three subdirectories: patient, appointment, medication.  Each with its own Dockerfile and JAR.
+	Created a directory that has three subdirectories: patient, appointment, medication.  Each with its own Dockerfile and JAR.
 	docker-compose.yml:
 		patient:
 		 build: patient
@@ -228,6 +228,30 @@ Patient, Patient Appointments, Patient Medications
 		docker-compose scale patient=1 (scale back down)
 		docker-compose scale patientappt=5
 		docker-compose scale patientmed=5
+		
+	To manage the PORT changes and keep ports consistent for real world applications use Kubernetes, HAProxy, EC2, etc.
+	
+	HAProxy additional to docker-compose.yml:
+		ha_patient:
+		 image: tutum/haproxy
+		 links:
+		   - patient
+		 ports:
+		   - "8080:80"
+		ha_appointment:
+		 image: tutum/haproxy
+		 links:
+		   - patientappt
+		 ports:
+		   - "8081:80"
+		ha_medication:
+		 image: tutum/haproxy
+		 links:
+		   - patientmed
+		 ports:
+		   - "8082:80"
+	
+	
  
  
  
