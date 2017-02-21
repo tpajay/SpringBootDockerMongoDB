@@ -1,9 +1,11 @@
 <h3>
-REST microservices using VirtualBox/Vagrant, Docker containers, Spring Boot, MongoDB, Spring Data MongoRepository API.
+REST microservices using VirtualBox/Vagrant, Docker containers, Docker Compose, Spring Boot, MongoDB, Spring Data(MongoRepository).
 <br/>
 <br/>
-Currently three Microservices that will each be deployed in their own Docker container running seperately for scalability and HA:
-Patient, Patient Appointments, Patient Medications
+This Git Repo contains three Microservices that will each be deployed in their own Docker container running seperately for scalability and HA: Patient, Patient Appointments, Patient Medications.  Instructions below for deployments.
+<br/>
+<br/>
+Below you can use Docker Compose to launch all the microservices with one "docker-compose up -d" command.
 </h3>
 
 <br/>
