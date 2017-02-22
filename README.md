@@ -258,7 +258,7 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 <br/>
 <br/>
 
-<b>Additional notes: Docker Swarm</b>
+<b>Docker Swarm</b>
 
 	
 	Install Docker Machine:
@@ -301,8 +301,10 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 	  curl 192.168.0.247:3000
 
 <br/>
+<br/>
 
-	Create Docker Host on AWS:
+<b>Create Docker Host on AWS:</b>
+
 		Aws user/password, etc:    ls -ahl ~/.aws/config
 		docker-machine create --driver amazonec2 --amazonec2-region=eu-west-1 --amazonec2-vpc-id=vpc53810a36 --amazonec2-subnet-a8b83af1 --amazonec2-zone c aws02 (installs docker engine, certs, etc)
 		docker-machine env aws02
