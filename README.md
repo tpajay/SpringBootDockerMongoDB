@@ -124,7 +124,8 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 <b>Testing Patient Appointment and Medication Microservices [all seperate Docker containers].  First these microservices need to be build and deployed as Docker containers just like above.</b>
 
 	Patient Appointments:
-	192.168.0.249:32776/appointment (vagrant server IP : microservice exposed port), run "docker ps" to get appointment service port number
+	192.168.0.249:32776/appointment (vagrant server IP : microservice exposed port), 
+	run "docker ps" to get appointment service port number
 	POST:
 		Content-Type = application/json
 		Payload:
@@ -231,7 +232,8 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 		docker-compose scale patientappt=5
 		docker-compose scale patientmed=5
 		
-	To manage the PORT changes and keep ports consistent for real world applications use Kubernetes, Docker Swarm, HAProxy, EC2, etc.
+	To manage the PORT changes and keep ports consistent for real world applications 
+	use Kubernetes, Docker Swarm, HAProxy, EC2, etc.
 	
 	HAProxy additional to docker-compose.yml:
 		ha_patient:
@@ -271,30 +273,32 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 	docker run swarm –help
 	
 	Start Consul:
-	*Consul is a modern datacenter runtime that provides service discovery, configuration, and orchestration capabilities.
-		docker run -d -p 8500:8500 --name=consul progrium/consul -server –bootstrap
+	*Consul is a modern datacenter runtime that provides service discovery, 
+	configuration, and orchestration capabilities.
+	  docker run -d -p 8500:8500 --name=consul progrium/consul -server –bootstrap
 	
 	Start manage node on swarmmanager:(master)
-	*The --advertise-addr flag configures the manager node to publish its ip address as the other nodes in the swarm must be able to access the manager at the IP address.
-		docker run -d -p 4000:4000 swarm manage -H :4000 --advertise 192.168.0.248:4000 consul://192.168.0.248:8500
+	*The --advertise-addr flag configures the manager node to publish its ip address 
+	as the other nodes in the swarm must be able to access the manager at the IP address.
+	  docker run -d -p 4000:4000 swarm manage -H :4000 --advertise 192.168.0.248:4000 consul://192.168.0.248:8500
 	
 	Run swarm join on the swarmagent1 (.246):
-	docker run -d swarm join --advertise=192.168.0.246:2375 consul://192.168.0.248:8500
+	  docker run -d swarm join --advertise=192.168.0.246:2375 consul://192.168.0.248:8500
 	
 	Run swarm join on the swarmagent2 (.247):
-	docker run -d swarm join --advertise=192.168.0.247:2375 consul://192.168.0.248:8500
+	  docker run -d swarm join --advertise=192.168.0.247:2375 consul://192.168.0.248:8500
 	
 	Check cluster status:
-	docker -H :4000 info
+	  docker -H :4000 info
 	
 	Run on a container on your swarm cluster:
-	docker -H :4000 run -p 3000:3000 -d container
+	  docker -H :4000 run -p 3000:3000 -d container
 	
 	List containers:
-	docker -H :4000 ps
+	  docker -H :4000 ps
 	
 	Connect to the container:
-	curl 192.168.0.247:3000
+	  curl 192.168.0.247:3000
 
 <br/>
 
