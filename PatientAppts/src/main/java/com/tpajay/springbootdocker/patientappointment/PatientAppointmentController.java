@@ -40,7 +40,7 @@ public class PatientAppointmentController {
 		return patientAppointmentRepository.findOne(apptId);
 	}
 	
-	//get all patients
+	//get all appointments
 	@RequestMapping(method = RequestMethod.GET, value="")
 	public List<PatientAppointment> getAll() {
 		return patientAppointmentRepository.findAll();

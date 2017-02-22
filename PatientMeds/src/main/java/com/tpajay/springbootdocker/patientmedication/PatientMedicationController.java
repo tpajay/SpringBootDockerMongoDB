@@ -26,20 +26,20 @@ public class PatientMedicationController {
 	@Autowired
 	PatientMedicationRepository patientMedicationRepository;
 
-	//add new patient
+	//add new medication
 	@RequestMapping(method = RequestMethod.POST)
 	public PatientMedication create(@RequestBody PatientMedication medication){
 		PatientMedication result = patientMedicationRepository.save(medication);
 		return result;
 	}
 	
-	//get patient by patient_id
+	//get medication by patient_id
 	@RequestMapping(method = RequestMethod.GET, value="/{prescId}")
 	public PatientMedication get(@PathVariable String prescId){
 		return patientMedicationRepository.findOne(prescId);
 	}
 	
-	//get all patients
+	//get all medications
 	@RequestMapping(method = RequestMethod.GET, value="")
 	public List<PatientMedication> getAll() {
 		return patientMedicationRepository.findAll();
