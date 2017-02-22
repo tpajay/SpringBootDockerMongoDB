@@ -258,7 +258,7 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 <br/>
 <br/>
 
-<b>Docker Swarm</b>
+<b>NOTES: Docker Swarm</b>
 
 	
 	Install Docker Machine:
@@ -292,27 +292,27 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 	  docker -H :4000 info
 	
 	Run on a container on your swarm cluster:
-	  docker -H :4000 run -p 3000:3000 -d container
+	  docker -H :4000 run -p 3000:3000 -d container/app
 	
 	List containers:
 	  docker -H :4000 ps
 	
-	Connect to the container:
+	Connect to the container/app:
 	  curl 192.168.0.247:3000
 
 <br/>
 <br/>
 
-<b>Create Docker Host on AWS:</b>
+<b>NOTES: Create Docker Host on AWS:</b>
 
-		Aws user/password, etc:    ls -ahl ~/.aws/config
-		docker-machine create --driver amazonec2 --amazonec2-region=eu-west-1 --amazonec2-vpc-id=vpc53810a36 --amazonec2-subnet-a8b83af1 --amazonec2-zone c aws02 (installs docker engine, certs, etc)
-		docker-machine env aws02
-		eval $(docker-machine env aws02)  --will setup env variables
-		docker run –d –p 3000:3000 wardviaene/nodejs-demo
-		docker ps  (see container running)
-		docker-machine ip aws02   (determine IP address being used on Amazon)
-			output: 52.16.112.236
+	Aws user/password, etc:    ls -ahl ~/.aws/config
+	docker-machine create --driver amazonec2 --amazonec2-region=eu-west-1 --amazonec2-vpc-id=vpc53810a36 --amazonec2-subnet-a8b83af1 --amazonec2-zone c aws02 (installs docker engine, certs, etc)
+	docker-machine env aws02
+	eval $(docker-machine env aws02)  --will setup env variables
+	docker run –d –p 3000:3000 container/app
+	docker ps  (see container running)
+	docker-machine ip aws02   (determine IP address being used on Amazon)
+		output: 52.16.112.236
 		curl 52.16.112.236
 			ouput: hello World
 		* make sure port 3000 is open on the network
