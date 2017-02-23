@@ -272,9 +272,11 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 	Install SWARM container on the manager node:
 	docker run swarm –help
 	
-	Start Consul:
+	Start Consul (can use Consul or Apache ZooKeeper):
 	*Consul is a modern datacenter runtime that provides service discovery, 
-	configuration, and orchestration capabilities.
+	configuration, and orchestration capabilities.  ZooKeeper is a centralized service for 
+	maintaining configuration information, naming, providing distributed synchronization, 
+	and providing group services.
 	  docker run -d -p 8500:8500 --name=consul progrium/consul -server –bootstrap
 	
 	Start manage node on swarmmanager:(master)
