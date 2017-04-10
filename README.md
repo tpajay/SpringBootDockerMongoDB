@@ -13,7 +13,7 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 <hr>
 <h3>STEPS</h3>
 <hr>
-<b>start/ssh vagrant server</b>
+<b>start/ssh vagrant server (I'm using Git Bash Windows prompt)</b>
 
 
 <b>start spring studio suite</b>
