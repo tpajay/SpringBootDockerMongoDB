@@ -10,7 +10,7 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 
 <br/>
 
-* Also check out the RestTemplateTest.java class.
+Also check out the RestTemplateTest.java class for example using RestTemplate to get JSON data and convert JSON data to POJO
 
 <br/>
 
