@@ -1,4 +1,5 @@
-//Entity for use with the com.tpajay.test.rest.RestTemplateTest
+//Entity for use with the RestTemplateTest
+//These fields match the REST Patient JSON Payload fields
 //Wanted to test Rest Template JSON data --> Patient Object
 public class Patient {
 
