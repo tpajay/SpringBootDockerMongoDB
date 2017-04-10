@@ -235,6 +235,11 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 	To manage the PORT changes and keep ports consistent for real world applications 
 	use Kubernetes, Docker Swarm, HAProxy, EC2, etc.
 	
+	HAProxy (http://www.haproxy.org/):
+	HAProxy is a free, very fast and reliable solution offering high availability, load 
+	balancing, and proxying for TCP and HTTP-based applications. It is particularly suited 
+	for very high traffic web sites and powers quite a number of the world's most visited ones.
+	
 	HAProxy additional to docker-compose.yml:
 		ha_patient:
 		 image: tutum/haproxy
