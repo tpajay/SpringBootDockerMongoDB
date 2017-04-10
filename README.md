@@ -133,7 +133,7 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 			  "apptId": "1111",
 			  "patientId": "0001",
 			  "physicianId": "2222",
-			  "description": "Quaterly Blood Work CBC LIPID PANEL",
+			  "description": "Quarterly Blood Work CBC LIPID PANEL",
 			  "apptDttm": "030520171400"
 			}
 	GET:
