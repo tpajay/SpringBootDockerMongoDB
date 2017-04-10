@@ -10,6 +10,10 @@ Below you can use Docker Compose to launch all the microservices with one "docke
 
 <br/>
 
+* Also check out the RestTemplateTest.java class.
+
+<br/>
+
 <hr>
 <h3>STEPS</h3>
 <hr>
